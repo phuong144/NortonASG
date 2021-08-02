@@ -39,8 +39,15 @@ function Discovery({data}) {
     return (
         <div>
             <h1>Discovery</h1>
-            <div>
-                {JSON.stringify(planetGrouping)}
+            <div style={{
+                width : '100%',
+                minHeight : '30rem',
+                fontSize : '0.8rem',
+                lineHeight : '1.2'   
+            }}>
+                <pre>
+                    {JSON.stringify(planetGrouping, null, 2)}
+                </pre>
             </div>
         </div>
     )
