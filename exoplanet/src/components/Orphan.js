@@ -18,8 +18,10 @@ function Orphan({data}) {
     
     return (
         <div>
-            <p>Orphan Planets: {orphanList.length}</p>
-            <p>{orphanList.map(planet => <li key={planet.PlanetIdentifier}>{planet.PlanetIdentifier}</li>)}</p>
+            <h1>Orphan Planets: {orphanList.length}</h1>
+            <h2>
+                {orphanList.map(planet => <li key={planet.PlanetIdentifier}>{planet.PlanetIdentifier}</li>)}
+            </h2>
             
         </div>
     )
