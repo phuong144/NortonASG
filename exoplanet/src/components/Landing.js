@@ -13,7 +13,7 @@ function Landing() {
                 setData(res.data);
             })
     }, []);
-    // {data.map(planet => <li key={planet.PlanetIdentifier}>{planet.PlanetIdentifier}</li>)}
+    
     return (
         <div>
             <Orphan data={data}/>
