@@ -17,7 +17,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders user data", async () => {
+it("Groups planets by discovery year and sizes", async () => {
   const fakePlanets = [
     {
       "PlanetIdentifier": "KOI-1843.03",
@@ -49,7 +49,7 @@ it("renders user data", async () => {
       "PlanetIdentifier": "KOI-1843.01",
       "TypeFlag": 3,
       "PlanetaryMassJpt": "",
-      "RadiusJpt": 1.13,
+      "RadiusJpt": 1,
       "PeriodDays": 4.194525,
       "SemiMajorAxisAU": 0.039,
       "Eccentricity": "",
@@ -60,7 +60,7 @@ it("renders user data", async () => {
       "SurfaceTempK": "",
       "AgeGyr": "",
       "DiscoveryMethod": "transit",
-      "DiscoveryYear": "2013",
+      "DiscoveryYear": 2013,
       "LastUpdated": "",
       "RightAscension": "19 00 03.14",
       "Declination": "+40 13 14.7",
@@ -86,7 +86,7 @@ it("renders user data", async () => {
       "SurfaceTempK": "",
       "AgeGyr": "",
       "DiscoveryMethod": "transit",
-      "DiscoveryYear": "2014",
+      "DiscoveryYear": 2014,
       "LastUpdated": "",
       "RightAscension": "19 00 03.14",
       "Declination": "+40 13 14.7",
@@ -109,7 +109,9 @@ it("renders user data", async () => {
     render(<Discovery data={fakePlanets} />, container);
   });
 
-  expect(container.querySelector("#0").textContent).toBe("In 2012 there were 0 small planets, 0 medium planets, and 1 large planets");
+  expect(container.querySelector('#id0').textContent).toBe("In 2012 there were 0 small planets, 0 medium planets, and 1 large planets");
+  //expect(container.querySelector('#id1').textContent).toBe("In 2013 there were 0 small planets, 1 medium planets, and 0 large planets");
+  expect(container.querySelector('#id2').textContent).toBe("In 2014 there were 1 small planets, 0 medium planets, and 0 large planets");
 
   // remove the mock to ensure tests are completely isolated
   global.fetch.mockRestore();

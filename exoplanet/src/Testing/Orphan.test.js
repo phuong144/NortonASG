@@ -17,7 +17,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders user data", async () => {
+it("Tests number of orphan planets", async () => {
   const fakePlanets = [
     {
       "PlanetIdentifier": "KOI-1843.03",

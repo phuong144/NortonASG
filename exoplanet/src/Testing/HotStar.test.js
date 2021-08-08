@@ -17,7 +17,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders user data", async () => {
+it("Tests planet with hottest star", async () => {
   const fakePlanets = [
     {
       "PlanetIdentifier": "KOI-1843.03",

@@ -46,9 +46,9 @@ function Discovery({data}) {
                 {Object.keys(planetGrouping).map((obj, i) => {
                     console.log(i);
                     return (
-                        <div id={i}  key={i}>
-                            <p>In {obj} there were {planetGrouping[obj].small} small planets, {planetGrouping[obj].medium} medium planets, and {planetGrouping[obj].large} large planets</p>
-                        </div>
+                        
+                        <p id={"id"+i} key={i}>In {obj} there were {planetGrouping[obj].small} small planets, {planetGrouping[obj].medium} medium planets, and {planetGrouping[obj].large} large planets</p>
+                        
                     )
                 })}
             </div>
