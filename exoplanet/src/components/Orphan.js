@@ -7,7 +7,6 @@ function Orphan({data}) {
     
     useEffect(() => {
         const orphanPlanets = [];
-        console.log(data);
         data.forEach(planet => {
             if (planet.TypeFlag === 3) {
                 orphanPlanets.push(planet);
