@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 /**
  * Returns grouping of planets by year and sizes
- * @param {*} data RadiusJpt, DiscoveryYear
+ * @param {*} planetGrouping RadiusJpt, DiscoveryYear
  * @returns 
  */
 function Discovery({data}) {
@@ -15,6 +15,9 @@ function Discovery({data}) {
         data.forEach(planet => {
             let groupByYear;
             const year = planet.DiscoveryYear;
+            if (year === "") {
+                return;
+            }
             if (!(year in discoveryMap)) {
                 groupByYear = {
                     "small": 0,
@@ -39,15 +42,15 @@ function Discovery({data}) {
     return (
         <div>
             <h1>Discovery</h1>
-            <div style={{
-                width : '100%',
-                minHeight : '30rem',
-                fontSize : '0.8rem',
-                lineHeight : '1.2'   
-            }}>
-                <pre>
-                    {JSON.stringify(planetGrouping, null, 2)}
-                </pre>
+            <div>
+                {Object.keys(planetGrouping).map((obj, i) => {
+                    console.log(i);
+                    return (
+                        <div id={i}  key={i}>
+                            <p>In {obj} there were {planetGrouping[obj].small} small planets, {planetGrouping[obj].medium} medium planets, and {planetGrouping[obj].large} large planets</p>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
