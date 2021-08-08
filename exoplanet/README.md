@@ -1,5 +1,23 @@
 # How to build and run application
 
+## Clone repo
+
+git clone https://github.com/phuong144/NortonASG.git
+
+## Install dependencies
+
+npm install
+
+## Without docker || kubernetes
+
+### To view program
+
+npm start
+
+### To run tests
+
+npm test
+
 ## Single docker container setup
 
 ### Build docker image
@@ -12,7 +30,7 @@ docker run -d -p 8080:80 react-docker-k8s:latest
 
 ### Visit http://localhost:8080/
 
-## Kubernetes replication setup with deployed public image
+## Kubernetes replication setup with deployed docker public image
 
 ### Deploy cluster
 
